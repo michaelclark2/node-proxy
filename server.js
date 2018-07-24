@@ -14,9 +14,9 @@ app.use(function(req, res, next) {
 });
 
 
-app.get('/api/petfinder/*', (req, res) => {
-  let apiCall = req.url.slice('/api/petfinder/'.length)
-  let apiReq = `http://api.petfinder.com/${apiCall}`
+app.get('/api/opensecrets/*', (req, res) => {
+  let apiCall = req.url.slice('/api/opensecrets/'.length)
+  let apiReq = `https://www.opensecrets.org/api/${apiCall}`
   request.get(apiReq, (err, _, body) => {
     res.send(body)
   });
